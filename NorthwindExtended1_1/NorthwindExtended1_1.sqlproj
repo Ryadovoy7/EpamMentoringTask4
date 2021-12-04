@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>NorthwindExtended1_1</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{2d9e6f2b-3952-48f1-ad5f-3c0f4873e110}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>NorthwindExtended1_1</RootNamespace>
+    <AssemblyName>NorthwindExtended1_1</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <DacApplicationName>Northwind</DacApplicationName>
+    <DacVersion>1.1.0.0</DacVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Northwind\" />
+    <Folder Include="Northwind\Tables\" />
+    <Folder Include="Northwind\Views\" />
+    <Folder Include="Northwind\Stored Procedures\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Northwind\Tables\Orders.sql" />
+    <Build Include="Northwind\Tables\Suppliers.sql" />
+    <Build Include="Northwind\Tables\Shippers.sql" />
+    <Build Include="Northwind\Tables\Customers.sql" />
+    <Build Include="Northwind\Tables\Categories.sql" />
+    <Build Include="Northwind\Tables\Employees.sql" />
+    <Build Include="Northwind\Tables\Region.sql" />
+    <Build Include="Northwind\Tables\CustomerDemographics.sql" />
+    <Build Include="Northwind\Tables\EmployeeTerritories.sql" />
+    <Build Include="Northwind\Tables\Territories.sql" />
+    <Build Include="Northwind\Tables\CustomerCustomerDemo.sql" />
+    <Build Include="Northwind\Tables\Order Details.sql" />
+    <Build Include="Northwind\Tables\Products.sql" />
+    <Build Include="Northwind\Views\Product Sales for 1997.sql" />
+    <Build Include="Northwind\Views\Invoices.sql" />
+    <Build Include="Northwind\Views\Quarterly Orders.sql" />
+    <Build Include="Northwind\Views\Orders Qry.sql" />
+    <Build Include="Northwind\Views\Order Details Extended.sql" />
+    <Build Include="Northwind\Views\Current Product List.sql" />
+    <Build Include="Northwind\Views\Products by Category.sql" />
+    <Build Include="Northwind\Views\Sales by Category.sql" />
+    <Build Include="Northwind\Views\Alphabetical list of products.sql" />
+    <Build Include="Northwind\Views\Category Sales for 1997.sql" />
+    <Build Include="Northwind\Views\Customer and Suppliers by City.sql" />
+    <Build Include="Northwind\Views\Order Subtotals.sql" />
+    <Build Include="Northwind\Views\Products Above Average Price.sql" />
+    <Build Include="Northwind\Views\Sales Totals by Amount.sql" />
+    <Build Include="Northwind\Views\Summary of Sales by Quarter.sql" />
+    <Build Include="Northwind\Views\Summary of Sales by Year.sql" />
+    <Build Include="Northwind\Stored Procedures\Ten Most Expensive Products.sql" />
+    <Build Include="Northwind\Stored Procedures\CustOrdersDetail.sql" />
+    <Build Include="Northwind\Stored Procedures\CustOrderHist.sql" />
+    <Build Include="Northwind\Stored Procedures\CustOrdersOrders.sql" />
+    <Build Include="Northwind\Stored Procedures\SalesByCategory.sql" />
+    <Build Include="Northwind\Stored Procedures\Employee Sales by Country.sql" />
+    <Build Include="Northwind\Stored Procedures\Sales by Year.sql" />
+    <Build Include="Northwind\Stored Procedures\CustomErrorThrow.sql" />
+    <Build Include="Security\Northwind.sql" />
+    <Build Include="Northwind\Tables\CreditCards.sql" />
+  </ItemGroup>
+</Project>

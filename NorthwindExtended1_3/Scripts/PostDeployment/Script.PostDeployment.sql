@@ -9,9 +9,11 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-DELETE FROM [Northwind].[Products];
-DELETE FROM [Northwind].[Suppliers];
-DELETE FROM [Northwind].[Categories];
+IF NOT EXISTS (SELECT * FROM [Northwind].[Categories])
+AND NOT EXISTS (SELECT * FROM [Northwind].[Suppliers])
+AND NOT EXISTS (SELECT * FROM [Northwind].[Products])
+BEGIN
 :r .\Categories.sql
 :r .\Suppliers.sql
 :r .\Products.sql
+END

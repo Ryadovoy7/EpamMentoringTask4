@@ -7,4 +7,4 @@
 
 SELECT OrderID, ShippedDate, ShipVia
 FROM Northwind.Orders
-WHERE ShippedDate >= CONVERT(datetime,'1998-06-05') AND ShipVia >= 2
+WHERE ShippedDate >= '1998-06-05' AND ShipVia >= 2

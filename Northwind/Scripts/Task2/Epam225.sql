@@ -14,5 +14,10 @@ SELECT DISTINCT c1.City, c1.CustomerID
 FROM Northwind.Customers AS c1, Northwind.Customers AS c2
 WHERE c1.City = c2.City AND c1.CustomerID != c2.CustomerID
 
+-- через GROUP BY
+SELECT City, STRING_AGG(CustomerID, ',') AS Customers
+FROM Northwind.Customers
+GROUP BY City
+
 
 

@@ -5,10 +5,10 @@
 В результатах запроса возвращать для колонки ShippedDate вместо значений NULL строку ‘Not Shipped’, 
 для остальных значений возвращать дату в формате по умолчанию.
 */
-SELECT OrderID, 
+SELECT OrderID AS [Order Number], 
 CASE
 	WHEN ShippedDate IS NULL THEN 'Not Shipped'
 	ELSE CONVERT(varchar, ShippedDate, 23)
-END AS ShippedDate
+END AS [Shipped Date]
 FROM Northwind.Orders
 WHERE ShippedDate > '1998-06-05' OR ShippedDate IS NULL

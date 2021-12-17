@@ -6,4 +6,4 @@
 SELECT ContactName, Country
 FROM Northwind.Customers
 WHERE Country NOT IN ('USA', 'CANADA')
-ORDER BY ContactName, Country
+ORDER BY ContactName
